@@ -52,7 +52,7 @@ class CategoryController extends Controller
         $category->update();
 
         return response()->json([
-            'message' => 'User updated successfully'
+            'message' => 'User updated successfullyy'
         ]);
     }
 }
