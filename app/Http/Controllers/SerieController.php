@@ -9,7 +9,7 @@ use App\Http\Requests\UpdateSerieRequest;
 
 class SerieController extends Controller
 {
-    public function storeS(StoreSerieRequest $request){
+    public function store(StoreSerieRequest $request){
         
         $serie = new Serie();
 
@@ -22,7 +22,7 @@ class SerieController extends Controller
         ]);
     }
 
-    public function index2(){
+    public function index(){
         $series = Serie::all();
 
         if($series->count() >= 1)
@@ -35,7 +35,7 @@ class SerieController extends Controller
     }
     }
 
-    public function showS($id){
+    public function show($id){
         $series = Serie::findOrFail($id);
 
         return response()->json($series);
@@ -43,7 +43,7 @@ class SerieController extends Controller
 
 
 
-    public function destroy2($id){
+    public function destroy($id){
 
         $serie =  Serie::findOrFail($id);
 
@@ -60,7 +60,7 @@ class SerieController extends Controller
         ],200);
     }}
 
-    public function update2(UpdateSerieRequest $request, $id){
+    public function update(UpdateSerieRequest $request, $id){
 
     $serie = Serie::findOrFail($id);
 

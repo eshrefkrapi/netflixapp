@@ -24,7 +24,14 @@ class UpdateMovieRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|string',
+            'description' => 'required|string',
+            'category_id' => 'required|numeric|min:0|exists:categories,id',
+            'file' => 'required',
+            'thumbnail' => 'required|string',
+            'rating' => 'required|numeric|min:0',
+            'serie_id' => 'required|numeric|min:0|exists:series,id',
+            'date' => 'required',
         ];
     }
 }

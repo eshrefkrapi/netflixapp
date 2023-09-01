@@ -9,11 +9,11 @@ use App\Models\Role;
 
 class RoleController extends Controller
 {
-    public function index4(){
+    public function index(){
         $roles = Role::all();
         return response()->json($roles);
     }
-    public function storeR(StoreRoleRequest $request){
+    public function store(StoreRoleRequest $request){
         
         $role = new Role();
 
@@ -23,13 +23,13 @@ class RoleController extends Controller
         return response()->json($role);
     }
 
-    public function showR($id){
+    public function show($id){
         $roles =  Role::findOrFail($id);
         return response()->json($roles);
 
     }
 
-    public function destroy4($id){
+    public function destroy($id){
 
         $role =  Role::findOrFail($id);
 
@@ -41,7 +41,7 @@ class RoleController extends Controller
 
     }
 
-    public function update4(UpdateRoleRequest $request, $id){
+    public function update(UpdateRoleRequest $request, $id){
         
         $role =  Role::findOrFail($id);
 

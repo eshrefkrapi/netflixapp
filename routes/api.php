@@ -37,35 +37,35 @@ Route::post('category/update/{id}', [CategoryController::class, 'update']);
 
 
 
-Route::post('serie/store', [SerieController::class, 'storeS']);
+Route::post('serie/store', [SerieController::class, 'store']);
 
-Route::get('series', [SerieController::class, 'index2']);
+Route::get('series', [SerieController::class, 'index']);
 
-Route::post('serie/show/{id}', [SerieController::class, 'showS']);
+Route::post('serie/show/{id}', [SerieController::class, 'show']);
 
-Route::delete('serie/delete/{id}', [SerieController::class, 'destroy2']);
+Route::delete('serie/delete/{id}', [SerieController::class, 'destroy']);
 
-Route::post('serie/update/{id}', [SerieController::class, 'update2']);
-
-
-
-Route::post('movie/store', [MovieController::class, 'storeM']);
-
-Route::get('movies', [MovieController::class, 'index3']);
-
-Route::post('movie/show/{id}', [MovieController::class, 'showM']);
-
-Route::delete('movie/delete/{id}', [MovieController::class, 'destroy3']);
-
-Route::post('movie/update/{id}', [MovieController::class, 'update3']);
+Route::post('serie/update/{id}', [SerieController::class, 'update']);
 
 
-Route::post('role/store', [RoleController::class, 'storeR']);
 
-Route::get('roles', [RoleController::class, 'index4']);
+Route::post('movie/store', [MovieController::class, 'store']);
 
-Route::post('role/show/{id}', [RoleController::class, 'showR']);
+Route::get('movies', [MovieController::class, 'index']);
 
-Route::delete('role/delete/{id}', [RoleController::class, 'destroy4']);
+Route::post('movie/show/{id}', [MovieController::class, 'show']);
 
-Route::post('role/update/{id}', [RoleController::class, 'update4']);
+Route::delete('movie/delete/{id}', [MovieController::class, 'destroy']);
+
+Route::post('movie/update/{id}', [MovieController::class, 'update']);
+
+
+Route::post('role/store', [RoleController::class, 'store']);
+
+Route::get('roles', [RoleController::class, 'index']);
+
+Route::post('role/show/{id}', [RoleController::class, 'show']);
+
+Route::delete('role/delete/{id}', [RoleController::class, 'destroy']);
+
+Route::post('role/update/{id}', [RoleController::class, 'update']);

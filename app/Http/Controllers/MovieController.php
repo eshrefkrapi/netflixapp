@@ -11,7 +11,7 @@ use Mockery\Mock;
 class MovieController extends Controller
 {
 
-    public function storeM(StoreMovieRequest $request){
+    public function store(StoreMovieRequest $request){
         
         $movie = new Movie();
 
@@ -26,12 +26,13 @@ class MovieController extends Controller
 
         
         $movie->save();
+
         return response()->json([
             'message' => 'Movie stored successfully'
         ]);
     }
 
-    public function index3(){
+    public function index(){
         $movies = Movie::all();
 
         if($movies->count() >= 1)
@@ -44,7 +45,7 @@ class MovieController extends Controller
     }
     }
 
-    public function showM($id){
+    public function show($id){
         $movies = Movie::findOrFail($id);
 
         return response()->json($movies);
@@ -52,7 +53,7 @@ class MovieController extends Controller
 
 
 
-    public function destroy3($id){
+    public function destroy($id){
 
         $movie =  Movie::findOrFail($id);
 
@@ -69,16 +70,16 @@ class MovieController extends Controller
         ],200);
     }}
 
-    public function update3(UpdateMovieRequest $request, $id){
+    public function update(UpdateMovieRequest $request, $id){
 
     $movie = Movie::findOrFail($id);
 
     $movie->name = $request->name;
     $movie->description = $request->description;
-    $movie->description = $request->description;
+    $movie->category_id = $request->category_id;
     $movie->file = $request->file;
     $movie->thumbnail = $request->thumbnail;
-    $movie->rating = $request->name;
+    $movie->rating = $request->rating;
     $movie->serie_id = $request->serie_id;
     $movie->date = $request->date;
 
